@@ -26,9 +26,6 @@ body {
 p {
     margin-bottom: 20px;
 }
-html {
-    scroll-behavior: smooth;
-}
 
 /* Header */
 .nav-menu ul.menu {

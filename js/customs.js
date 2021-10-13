@@ -7,7 +7,7 @@ jQuery(document).ready(function () {
 	jQuery(".fancybox").fancybox();
 
 	
-	var slid = jQuery('#carousel-reviews');
+	let slid = jQuery('#carousel-reviews');
 		
 	slid.owlCarousel({
 		items: 1,
@@ -73,13 +73,24 @@ jQuery(document).ready(function () {
 
 
 
-		var elem = $('.header, .separator');
-		var doc = $(document);
+		let elem = $('.header, .separator');
+		let doc = $(document);
 		function scrolled() {
-   		var threshold = doc.scrollTop() > 50;
-   		elem.toggleClass('scrolled', threshold);
+			let threshold = doc.scrollTop() > 50;
+			elem.toggleClass('scrolled', threshold);
    		}
 		$(window).on({ scroll: scrolled });
 
+
+
+
+
+		$(".menu").on("click","a", function (event) {
+			event.preventDefault();
+			let id  = $(this).attr('href'),
+				top = $(id).offset().top;
+			$('body,html').animate({scrollTop: top - 100}, 600);
+			console.log(top)
+		});
 	});
 	 
